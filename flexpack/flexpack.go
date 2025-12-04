@@ -2,6 +2,7 @@ package flexpack
 
 import (
 	"os"
+	"time"
 
 	"github.com/jfrog/build-info-go/entities"
 )
@@ -77,6 +78,9 @@ type GradleConfig struct {
 
 	// GradleExecutable is the path to the Gradle executable (optional, will be auto-detected)
 	GradleExecutable string
+
+	// CommandTimeout is the maximum duration for Gradle commands (optional, defaults to 10 minutes)
+	CommandTimeout time.Duration
 }
 
 // IsFlexPackEnabled checks if the FlexPack (native) implementation should be used
